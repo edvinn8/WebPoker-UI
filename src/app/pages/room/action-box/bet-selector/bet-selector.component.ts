@@ -1,9 +1,10 @@
 import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 
 @Component({
-  selector: 'app-bet-selector',
-  templateUrl: './bet-selector.component.html',
-  styleUrls: ['./bet-selector.component.scss']
+    selector: 'app-bet-selector',
+    templateUrl: './bet-selector.component.html',
+    styleUrls: ['./bet-selector.component.scss'],
+    standalone: false
 })
 export class BetSelectorComponent implements OnInit {
 

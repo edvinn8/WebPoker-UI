@@ -14,9 +14,10 @@ import { RxEType } from 'src/app/services/network/ReactionEvents';
 import { Subscription } from 'rxjs';
 
 @Component({
-  selector: 'app-room',
-  templateUrl: './room.component.html',
-  styleUrls: ['./room.component.scss']
+    selector: 'app-room',
+    templateUrl: './room.component.html',
+    styleUrls: ['./room.component.scss'],
+    standalone: false
 })
 export class RoomComponent implements OnInit, OnDestroy {
 

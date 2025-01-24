@@ -5,9 +5,10 @@ import { Security } from 'src/app/services/Security';
 import { SoonModalService } from 'src/app/services/soon-modal.service';
 
 @Component({
-  selector: 'app-user-menu-actions',
-  templateUrl: './user-menu-actions.component.html',
-  styleUrls: ['./user-menu-actions.component.scss']
+    selector: 'app-user-menu-actions',
+    templateUrl: './user-menu-actions.component.html',
+    styleUrls: ['./user-menu-actions.component.scss'],
+    standalone: false
 })
 export class UserMenuActionsComponent implements OnInit {
 

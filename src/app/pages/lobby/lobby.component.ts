@@ -9,9 +9,10 @@ import { FriendsService } from 'src/app/services/friends.service';
 import { SoonModalService } from 'src/app/services/soon-modal.service';
 
 @Component({
-  selector: 'app-lobby',
-  templateUrl: './lobby.component.html',
-  styleUrls: ['./lobby.component.scss']
+    selector: 'app-lobby',
+    templateUrl: './lobby.component.html',
+    styleUrls: ['./lobby.component.scss'],
+    standalone: false
 })
 export class LobbyComponent implements OnInit, OnDestroy {
 

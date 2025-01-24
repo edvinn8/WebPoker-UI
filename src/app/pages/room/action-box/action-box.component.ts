@@ -6,9 +6,10 @@ import { RoomService } from 'src/app/services/network/room.service';
 import { RxEType } from 'src/app/services/network/ReactionEvents';
 
 @Component({
-  selector: 'app-action-box',
-  templateUrl: './action-box.component.html',
-  styleUrls: ['./action-box.component.scss']
+    selector: 'app-action-box',
+    templateUrl: './action-box.component.html',
+    styleUrls: ['./action-box.component.scss'],
+    standalone: false
 })
 export class ActionBoxComponent implements OnInit {
 

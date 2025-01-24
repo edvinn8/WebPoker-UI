@@ -3,9 +3,10 @@ import { RoomResponse } from 'src/app/services/roomsResponse';
 import { Router } from '@angular/router';
 
 @Component({
-  selector: 'app-table',
-  templateUrl: './table.component.html',
-  styleUrls: ['./table.component.scss']
+    selector: 'app-table',
+    templateUrl: './table.component.html',
+    styleUrls: ['./table.component.scss'],
+    standalone: false
 })
 export class TableComponent implements OnInit {
 

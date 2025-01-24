@@ -4,9 +4,10 @@ import { Room, RoomResponse } from 'src/app/services/roomsResponse';
 import { LobbyService } from 'src/app/services/lobby.service';
 
 @Component({
-  selector: 'app-action-menu-friends',
-  templateUrl: './action-menu-friends.component.html',
-  styleUrls: ['./action-menu-friends.component.scss']
+    selector: 'app-action-menu-friends',
+    templateUrl: './action-menu-friends.component.html',
+    styleUrls: ['./action-menu-friends.component.scss'],
+    standalone: false
 })
 export class ActionMenuFriendsComponent implements OnInit {
 

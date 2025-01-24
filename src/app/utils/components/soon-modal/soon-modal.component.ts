@@ -2,9 +2,10 @@ import { Component, OnInit } from '@angular/core';
 import { SoonModalService } from 'src/app/services/soon-modal.service';
 
 @Component({
-  selector: 'app-soon-modal',
-  templateUrl: './soon-modal.component.html',
-  styleUrls: ['./soon-modal.component.scss']
+    selector: 'app-soon-modal',
+    templateUrl: './soon-modal.component.html',
+    styleUrls: ['./soon-modal.component.scss'],
+    standalone: false
 })
 export class SoonModalComponent implements OnInit {
 

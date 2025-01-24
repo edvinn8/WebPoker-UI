@@ -1,9 +1,10 @@
 import { Component, OnInit, Input, OnChanges, SimpleChanges } from '@angular/core';
 
 @Component({
-  selector: 'app-stacker',
-  templateUrl: './stacker.component.html',
-  styleUrls: ['./stacker.component.scss']
+    selector: 'app-stacker',
+    templateUrl: './stacker.component.html',
+    styleUrls: ['./stacker.component.scss'],
+    standalone: false
 })
 export class StackerComponent implements OnInit, OnChanges {
 

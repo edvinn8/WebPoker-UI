@@ -4,9 +4,10 @@ import { Component, OnInit, Output, EventEmitter, Input } from '@angular/core';
 import { environment } from 'src/environments/environment';
 
 @Component({
-  selector: 'app-nav-bar',
-  templateUrl: './nav-bar.component.html',
-  styleUrls: ['./nav-bar.component.scss']
+    selector: 'app-nav-bar',
+    templateUrl: './nav-bar.component.html',
+    styleUrls: ['./nav-bar.component.scss'],
+    standalone: false
 })
 export class NavBarComponent implements OnInit {
 

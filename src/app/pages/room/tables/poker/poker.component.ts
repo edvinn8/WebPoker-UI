@@ -12,9 +12,10 @@ import { Subscription } from 'rxjs';
 import { UserMenuControllerService } from '../../user-menu-actions/user-menu-controller.service';
 
 @Component({
-  selector: 'app-table-poker',
-  templateUrl: './poker.component.html',
-  styleUrls: ['./poker.component.scss']
+    selector: 'app-table-poker',
+    templateUrl: './poker.component.html',
+    styleUrls: ['./poker.component.scss'],
+    standalone: false
 })
 export class PokerComponent implements OnInit, OnDestroy {
 

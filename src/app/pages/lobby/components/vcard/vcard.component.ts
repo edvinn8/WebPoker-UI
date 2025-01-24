@@ -4,9 +4,10 @@ import { LobbyService } from 'src/app/services/lobby.service';
 import { ActionMenuFriendsService } from '../action-menu-friends/action-menu-friends.service';
 
 @Component({
-  selector: 'app-vcard',
-  templateUrl: './vcard.component.html',
-  styleUrls: ['./vcard.component.scss']
+    selector: 'app-vcard',
+    templateUrl: './vcard.component.html',
+    styleUrls: ['./vcard.component.scss'],
+    standalone: false
 })
 export class VcardComponent implements OnInit {
   @Input() status: string = '';

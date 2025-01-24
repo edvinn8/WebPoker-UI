@@ -2,9 +2,10 @@ import { Component, OnInit, Input } from '@angular/core';
 import { UserMenuControllerService } from '../user-menu-actions/user-menu-controller.service';
 
 @Component({
-  selector: 'app-room-vcard',
-  templateUrl: './vcard.component.html',
-  styleUrls: ['./vcard.component.scss']
+    selector: 'app-room-vcard',
+    templateUrl: './vcard.component.html',
+    styleUrls: ['./vcard.component.scss'],
+    standalone: false
 })
 export class VcardComponent implements OnInit {
 
