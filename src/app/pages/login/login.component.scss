@@ -1,0 +1,308 @@
+ main {
+    flex-direction: column;
+    section {
+        box-shadow: 0px 0px 10px 4px #00000073;
+        border: 1px solid #000000;
+        width: 450px;
+        padding: 3vh 2vw;
+        border-radius: 7px;
+        background: #0b1b0f;
+        margin: 2vh 0px;
+        color: #d7a965;
+        position: relative;
+        overflow: hidden;
+        z-index: 1;
+        height: 235px;
+        span.error {
+          position: absolute;
+          top: -25px;
+          margin-left: 24%;
+          font-size: 13px;
+          color: red;
+          padding-left: 7px;
+        }
+        span.errorBottom {
+          position: absolute;
+          font-size: 13px;
+          color: red;
+        }
+        &::after {
+            content: "♣";
+            position: absolute;
+            font-size: 450px;
+            bottom: -130px;
+            left: -57px;
+            z-index: 0;
+            color: rgba(255, 255, 255, 0.02);
+        }
+        &::before {
+            content: "♡";
+            font-size: 450px;
+            position: absolute;
+            top: -231px;
+            right: -19px;
+            color: rgba(215, 169, 101, 0.05);
+        }
+        header {
+            text-align: center;
+            font-size: 35px;
+            margin-bottom: 3vh;
+            h3 {
+                display: inline-block;
+                font-family: Montserrat, Montserrat;
+                font-weight: 100;
+                font-size: 35px;
+                margin: 0px;
+                color: #aa7f40;
+            }
+            h4 {
+                display: inline-block;
+                font-family: Paytone One, Montserrat;
+                margin: 0px;
+                color: #d7a965;
+                font-weight: 100;
+                font-size: 37px;
+            }
+        }
+        h5 {
+            margin: 0px;
+            font-size: 20px;
+            margin-bottom: -10px;
+        }
+        form {
+            position: relative;
+            z-index: 1;
+            .formControl {
+                margin: 2vh 0px;
+                position: relative;
+                label {
+                    width: 22%;
+                    display: inline-block;
+                    padding-right: 2%;
+                }
+                input {
+                    width: calc(74% - 14px);
+                    padding: 7px;
+                    border-radius: 6px;
+                    border: 3px solid #0c1f11;
+                    outline: none;
+                    background: linear-gradient(#cccccc, white);
+                    box-shadow: 0px 0px 5px 0px black;
+                    &:focus, &:active {
+                      box-shadow: 0px 0px 5px #d7a965, inset 0px 0px 5px #ffb229;
+                    }
+                    &.error {
+                      padding: 9px;
+                      border: 1px solid red;
+                    }
+                }
+            }
+            .lastPart {
+                position: relative;
+                height: 47px;
+                line-height: 47px;
+                a {
+                    color: #ffb229;
+                    font-size: 13px;
+                }
+                button {
+                    position: absolute;
+                    right: 0px;
+                }
+
+            }
+        }
+        .cut {
+            width: 14vw;
+            height: 42vh;
+            position: absolute;
+            background: rgba(65, 111, 57, 0.05);
+            right: -5vw;
+            bottom: -27vh;
+            transform: rotate(45deg);
+            border-left: 1px dashed rgba(255, 180, 45, 0.5);
+            z-index: 0;
+        }
+        transition: transform 1s;
+        transform-style: preserve-3d;
+        &.rotate {
+            // animation: rotation 1s linear forwards;
+            transform: rotateX(180deg);
+        }
+        .signup {
+            transform: rotateX(180deg);
+            z-index: 1;
+            position: relative;
+        }
+    }
+    footer {
+        box-shadow: 0px 0px 10px 4px #00000073;
+        border: 1px solid #000000;
+        width: 450px;
+        padding: 1.5vh 2vw;
+        border-radius: 7px;
+        background: #0b1b0f;
+        color: #d7a965;
+        height: 44px;
+        line-height: 44px;
+        position: relative;
+        z-index: 1;
+        overflow: hidden;
+        button {
+            position: absolute;
+            right: 2vw;
+        }
+        .cut {
+            width: 14vw;
+            height: 42vh;
+            position: absolute;
+            background: rgba(65, 111, 57, 0.05);
+            right: -5vw;
+            bottom: -17vh;
+            transform: rotate(45deg);
+            border-left: 1px dashed rgba(255, 180, 45, 0.5);
+        }
+        transition: transform 1s;
+        &.rotate {
+            // animation: rotation 1s linear forwards;
+            transform: rotateX(180deg);
+        }
+        .signup {
+            transform: rotateX(180deg);
+            transform-origin: 0px;
+            button {
+                right: 0vw;
+            }
+        }
+    }
+}
+button {
+    margin: 5px;
+    background: linear-gradient(#1e3221, #102013);
+    border: 1px solid #29452d;
+    border-radius: 3px;
+    padding: 9px 15px;
+    color: #d7a965;
+    border-right: 1px solid #223c26;
+    border-left: 1px solid #223c26;
+    box-shadow: 0px 0px 6px 2px black;
+    font-family: Montserrat;
+    outline: none;
+    cursor: pointer;
+    &:hover {
+        color: #f09b01;
+        background: linear-gradient(#2d4b32, #172c1b);
+    }
+    &:focus {
+        box-shadow: 0px 0px 6px 2px black, inset 0px 0px 5px #2d4b32;
+    }
+    &:active {
+        box-shadow: none;
+        border: 1px solid transparent;
+        // background: #203924;
+        background: #172c1b;
+    }
+    &.spinner {
+        background: #29452d;
+        color: #29452d;
+        &::after{
+            content: "";
+            display: block;
+            width: 10px;
+            height: 10px;
+            position: absolute;
+            background: transparent;
+            top: calc(50% - 7px);
+            border-radius: 50%;
+            border: 3px solid #d7a965;
+            left: calc(50% - 8px);
+            border-left: 3px solid transparent;
+            animation: rotator 0.6s linear infinite;
+        }
+    }
+}
+
+@keyframes rotator {
+    0% {
+        transform: rotate(0deg);
+    }
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+/**
+margin: 0px;
+    color: red;
+    font-size: 13px;
+    margin-bottom: -15px;
+    text-align: center;
+    margin-top: -21px;
+    **/
+.popupValidator {
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.40);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  top: 0px;
+  left: 0px;
+  position: fixed;
+  section {
+    box-shadow: 0px 0px 10px 4px #00000073;
+    border: 1px solid #000000;
+    width: 450px;
+    // padding: 1.5vh 2vw;
+    border-radius: 7px;
+    background: #0b1b0f;
+    color: #d7a965;
+    position: relative;
+    z-index: 1;
+    overflow: hidden;
+    transition: transform 1s;
+    header {
+      background: rgba(65, 111, 57, 0.05);
+      border-bottom: 1px dashed rgba(255, 180, 45, 0.5);
+      text-align: center;
+      font-family: Montserrat, Montserrat;
+      font-weight: 100;
+      line-height: 30px;
+      font-size: 18px;
+      color: #aa7f40;
+      text-transform: uppercase;
+      padding: 5px 0px;
+    }
+    p {
+      text-align: center;
+      color: rgba(215, 169, 101, 0.75);
+    }
+    input {
+      margin: 15px auto;
+      display: block;
+      padding: 7px;
+      border-radius: 6px;
+      border: 3px solid #0c1f11;
+      outline: none;
+      background: linear-gradient(#cccccc, white);
+      box-shadow: 0px 0px 5px 0px black;
+      width: 60%;
+      &.centered {
+        text-align: center;
+      }
+    }
+    span.error {
+      display: block;
+      text-align: center;
+      color: red;
+      line-height: 0px;
+    }
+    button {
+      margin: 5px auto;
+      cursor: pointer;
+      display: block;
+      position: relative;
+    }
+  }
+}
