@@ -21,15 +21,14 @@ interface Config {
 }
 
 @Injectable({
-  providedIn: 'root'
+  providedIn: 'root',
 })
 export class StompService {
-
   public config = null;
 
   private socket: any;
 
-  public stomp : any;
+  public stomp: any;
 
   private timer: any;
 
@@ -45,15 +44,13 @@ export class StompService {
   public onConnectEvent: EventEmitter<any> = new EventEmitter<any>();
 
   constructor() {
-
     this.status = 'CLOSED';
 
     // Create promise
     this.disconnectPromise = new Promise(
-      (resolve, reject) => this.resolveDisConPromise = resolve
+      (resolve, reject) => (this.resolveDisConPromise = resolve)
     );
   }
-
 
   /**
    * Configure
@@ -62,14 +59,13 @@ export class StompService {
     this.config = config;
   }
 
-
   /**
    * Try to establish connection to server
    */
   public startConnect(): Promise<{}> {
     if (this.config === null) {
-          throw Error('Configuration required!');
-      }
+      throw Error('Configuration required!');
+    }
 
     this.status = 'CONNECTING';
 
@@ -90,13 +86,9 @@ export class StompService {
     }
 
     // Connect to server
-    this.stomp.connect(this.config.headers || {}, this.onConnect,this.onError);
-    return new Promise(
-      (resolve, reject) => this.resolveConPromise = resolve
-    );
-
+    this.stomp.connect(this.config.headers || {}, this.onConnect, this.onError);
+    return new Promise((resolve, reject) => (this.resolveConPromise = resolve));
   }
-
 
   /**
    * Successfull connection to server
@@ -107,13 +99,12 @@ export class StompService {
     this.resolveConPromise();
     this.timer = null;
     // console.log('Connected: ' + frame);
-  }
+  };
 
   /**
    * Unsuccessfull connection to server
    */
-  public onError = (error: string ) => {
-
+  public onError = (error: string) => {
     console.error(`Error: ${error}`);
     this.onErrorEvent.emit(error);
 
@@ -126,18 +117,22 @@ export class StompService {
         this.startConnect();
       }, this.config.recTimeout || 5000);
     }
-  }
+  };
 
   /**
    * Subscribe
    */
   public subscribe(destination: string, callback: any, headers?: any) {
     headers = headers || {};
-    return this.stomp.subscribe(destination, (response) => {
-      const message = JSON.parse(response.body);
-      const headersInternal = response.headers;
-      callback(message, headersInternal);
-    }, headers);
+    return this.stomp.subscribe(
+      destination,
+      (response) => {
+        const message = JSON.parse(response.body);
+        const headersInternal = response.headers;
+        callback(message, headersInternal);
+      },
+      headers
+    );
   }
 
   /**
@@ -147,7 +142,6 @@ export class StompService {
     subscription.unsubscribe();
   }
 
-
   /**
    * Send
    */
@@ -156,7 +150,6 @@ export class StompService {
     headers = headers || {};
     this.stomp.send(destination, headers, message);
   }
-
 
   /**
    * Disconnect stomp
@@ -168,8 +161,6 @@ export class StompService {
     });
     return this.disconnectPromise;
   }
-
-
 
   /**
    * After specified subscription
@@ -186,18 +177,17 @@ export class StompService {
         if (this.config.debug) {
           // console.log('queue ' + name + ' <<< has been complated');
         }
-        return false;
       }
-    },this.config.queueCheckTime || 100);
+      return false;
+    }, this.config.queueCheckTime || 100);
 
     if (!this.queuePromises[name + 'promice']) {
       this.queuePromises[name + 'promice'] = new Promise(
-        (resolve, reject) => this.queuePromises[name] = resolve
+        (resolve, reject) => (this.queuePromises[name] = resolve)
       );
     }
     return this.queuePromises[name + 'promice'];
   }
-
 
   /**
    * Done specified subscription
@@ -206,7 +196,6 @@ export class StompService {
     this.nameCheck(name);
     this.config.queue[name] = true;
   }
-
 
   /**
    * Turn specified subscription on pending mode
@@ -219,14 +208,12 @@ export class StompService {
     }
   }
 
-
   /**
    * Check name in queue
    */
   private nameCheck(name: string): void {
     if (!this.config.queue.hasOwnProperty(name)) {
-      throw Error('\'' + name + '\' has not found in queue');
+      throw Error("'" + name + "' has not found in queue");
     }
   }
-
 }
