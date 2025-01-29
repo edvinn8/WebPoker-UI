@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { ActionMenuFriendsService } from './action-menu-friends.service';
 import { Room, RoomResponse } from 'src/app/services/roomsResponse';
 import { LobbyService } from 'src/app/services/lobby.service';
+import { Router } from '@angular/router';
 
 @Component({
     selector: 'app-action-menu-friends',
@@ -16,7 +17,7 @@ export class ActionMenuFriendsComponent implements OnInit {
   public y: number;
   public rooms: Room[];
 
-  constructor(private amfs: ActionMenuFriendsService, private lobbySrv: LobbyService) { }
+  constructor(private amfs: ActionMenuFriendsService, private lobbySrv: LobbyService, private router: Router) { }
 
   ngOnInit() {
     this.amfs.getfME().subscribe(s => {
@@ -37,7 +38,8 @@ export class ActionMenuFriendsComponent implements OnInit {
   connect(room: RoomResponse) {
     console.log(room);
     localStorage.setItem('room-' + room.id_room, JSON.stringify(room));
-    window.open('/#/room/' + room.id_room, '_blank');
+    this.router.navigate(['/room', room.id_room]);
+    // window.open('/#/room/' + room.id_room, '_blank');
   }
 
 }

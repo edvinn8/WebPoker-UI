@@ -1,4 +1,4 @@
-import { async, ComponentFixture, TestBed } from '@angular/core/testing';
+import { ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { UserMenuActionsComponent } from './user-menu-actions.component';
 
@@ -6,12 +6,12 @@ describe('UserMenuActionsComponent', () => {
   let component: UserMenuActionsComponent;
   let fixture: ComponentFixture<UserMenuActionsComponent>;
 
-  beforeEach(async(() => {
+  beforeEach(async () => {
     TestBed.configureTestingModule({
       declarations: [ UserMenuActionsComponent ]
     })
     .compileComponents();
-  }));
+  });
 
   beforeEach(() => {
     fixture = TestBed.createComponent(UserMenuActionsComponent);

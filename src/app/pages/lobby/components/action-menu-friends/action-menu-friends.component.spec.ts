@@ -1,4 +1,4 @@
-import { async, ComponentFixture, TestBed } from '@angular/core/testing';
+import { ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { ActionMenuFriendsComponent } from './action-menu-friends.component';
 
@@ -6,12 +6,12 @@ describe('ActionMenuFriendsComponent', () => {
   let component: ActionMenuFriendsComponent;
   let fixture: ComponentFixture<ActionMenuFriendsComponent>;
 
-  beforeEach(async(() => {
+  beforeEach(async () => {
     TestBed.configureTestingModule({
       declarations: [ ActionMenuFriendsComponent ]
     })
     .compileComponents();
-  }));
+  });
 
   beforeEach(() => {
     fixture = TestBed.createComponent(ActionMenuFriendsComponent);

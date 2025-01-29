@@ -11,14 +11,6 @@
         "^production"
       ]
     },
-    "test": {
-      "cache": true,
-      "inputs": [
-        "default",
-        "^production",
-        "{workspaceRoot}/karma.conf.js"
-      ]
-    },
     "lint": {
       "cache": true,
       "inputs": [

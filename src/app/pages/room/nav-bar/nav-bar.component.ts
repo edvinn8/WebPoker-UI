@@ -30,7 +30,7 @@ export class NavBarComponent implements OnInit {
     // proceso de recuperación de fichas.
     this.room.leave();
     // TODO: uncomment me when have timmer fold:
-    // window.close();
+    this.router.navigateByUrl('lobby');
   }
 
 }
