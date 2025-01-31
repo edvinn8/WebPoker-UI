@@ -12,8 +12,8 @@ export class TableComponent implements OnInit {
 
   public tab = 1;
   @Input() rooms: RoomResponse[];
-  @Output() reload: EventEmitter<() => void> = new EventEmitter<() => void>();
-  public loading: boolean;
+  @Output() reload: EventEmitter<void> = new EventEmitter<void>();
+  @Input() loading: boolean;
 
   constructor(private router: Router) { }
 
@@ -28,9 +28,7 @@ export class TableComponent implements OnInit {
 
   reloading() {
     this.loading = true;
-    this.reload.emit(() => {
-      this.loading = false;
-    });
+    this.reload.emit();
   }
 
   roomsLenght(){
